@@ -1,7 +1,7 @@
 import React from 'react';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import { Typography, TextField, Button, FormControl, InputLabel, Select } from '@material-ui/core';
+import { Typography } from '@material-ui/core';
 import { fade, makeStyles } from '@material-ui/core/styles';
 
 
@@ -64,47 +64,15 @@ const useStyles = makeStyles((theme) => ({
 
 export default function SearchAppBar() {
   const classes = useStyles();
-  const [state, setState] = React.useState(0);
 
-  const handleChange = (event) => {
-    const name = event.target.name;
-    setState({
-      ...state,
-      [name]: event.target.value,
-    }); 
-  };
+
   return (
     <div className={classes.root}>
-      <AppBar position="static" color='inherit'>
+      <AppBar position="static" color='primary'>
         <Toolbar>
           <Typography className={classes.title} variant="h6" noWrap>
             iTunes-Store
           </Typography>
-          <TextField id="text-filled" label="Artist, Album, Gender, ..." variant="outlined"  size='small' color="primary" style={{ marginRight: '5px'}}/>
-                <FormControl variant="outlined" className={classes.formControl} size='small' style={{ marginRight: '10px'}} color='primary'>
-                    <InputLabel htmlFor="outlined-age-native-simple">Select</InputLabel>
-                        <Select
-                            native
-                            value={state.select}
-                            onChange={handleChange}
-                            label="Select"
-                            inputProps={{
-                            name: 'select',
-                            id: 'outlined-age-native-simple',
-                            }}
-                        >
-                            <option aria-label="None" value="" />
-                            <option value='all'>All</option>
-                            <option value='movie'>Movie</option>
-                            <option value='podcast'>Podcast</option>
-                            <option value='music'>Music</option>
-                            <option value='ebook'>eBook</option>
-                            <option value='musicVideo'>Music Video</option>
-                        </Select>
-                </FormControl>
-                <Button variant="contained" size="large" className={classes.margin} style={{ marginRight: '5px'}} color="primary" >
-                    Buscar
-                </Button>
         </Toolbar>
       </AppBar>
     </div>
