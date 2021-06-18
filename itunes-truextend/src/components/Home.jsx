@@ -1,9 +1,7 @@
-
 import React, { useState } from 'react';
 import '../App.css';
 import { Grid, Typography, TextField, Button, FormControl, InputLabel, Select } from '@material-ui/core';
 import { makeStyles,  } from '@material-ui/core/styles';
-
 
 const useStyles = makeStyles((theme) => ({
    
@@ -42,9 +40,7 @@ export default function HomeView() {
     return (
       <Grid container alignContent='center' alignItems='center'>
           <Grid item xs={12} component="div" style={{ backgroundColor: '#E2E0DF', height: '50vh', textAlign: 'center', margin: '200px 50px 50px 50px'  }} >
-                <Typography variant='h4' style={{ textAlign: 'center', marginTop: '100px', marginBottom: '10px'}}>
-                   iTunes-Store
-                </Typography> 
+                <Typography variant='h4' style={{ textAlign: 'center', marginTop: '125px', marginBottom: '10px'}}>iTunes-Store</Typography> 
                 <TextField id="text-filled" label="Artist, Album, Gender, ..." variant="outlined"  size='small' color="primary" style={{ marginRight: '5px'}}/>
                 <FormControl variant="outlined" className={classes.formControl} size='small' style={{ marginRight: '5px'}}>
                     <InputLabel htmlFor="outlined-age-native-simple">Select</InputLabel>
@@ -67,13 +63,11 @@ export default function HomeView() {
                             <option value='musicVideo'>Music Video</option>
                         </Select>
                 </FormControl>
-                <Button variant="contained" size="large" className={classes.margin} style={{ marginRight: '5px'}} color="primary" >
+                <Button variant="contained" size="large" className={classes.margin} style={{ marginRight: '5px'}} color="primary" onClick={() => {window.location.assign('/')}} >
                     Buscar
                 </Button>
           </Grid>
-
       </Grid>
-
     );
 }
 
